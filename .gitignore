@@ -11,6 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+.vite
+
+# Qwen workspace files
+.qwen/
 
 # Editor directories and files
 .vscode/*

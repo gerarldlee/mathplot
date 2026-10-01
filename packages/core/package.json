@@ -1,0 +1,35 @@
+{
+  "name": "@mathplot/core",
+  "version": "0.1.0",
+  "description": "Framework-free engine for mathplot: equation parsing, function/heatmap/surface samplers, chart data parsing, and mathplot fence parsing.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": false,
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --sourcemap --clean && tsc -p tsconfig.build.json",
+    "test": "vitest run",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "mathjs": "^15.2.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "~6.0.2",
+    "vitest": "^5.0.1"
+  }
+}

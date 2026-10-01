@@ -1,0 +1,1 @@
+declare module '@mathplot/react/styles.css'

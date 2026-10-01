@@ -1,7 +1,11 @@
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    { "path": "./packages/core" },
+    { "path": "./packages/react" },
+    { "path": "./packages/markdown" },
+    { "path": "./packages/remark-mathplot" },
+    { "path": "./packages/web-components" },
+    { "path": "./packages/site" }
   ]
 }

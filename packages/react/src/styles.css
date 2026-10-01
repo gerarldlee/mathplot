@@ -1,0 +1,392 @@
+/* mathplot interactive plot viewport styles.
+   Class names match the original PlotEq application so styles port 1:1. */
+
+.mathplot-container {
+  container-type: inline-size;
+}
+
+.two-dimensional-viewport {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(49, 70, 110, 0.13), transparent 45%),
+    #090c16;
+  color: #eef2ff;
+}
+
+.chart-viewport {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(49, 70, 110, 0.13), transparent 45%),
+    #090c16;
+  color: #eef2ff;
+  padding: 12px;
+}
+
+.chart-graph {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.chart-background {
+  fill: #090c16;
+}
+
+.chart-grid-line {
+  stroke: rgba(148, 163, 184, 0.12);
+  stroke-width: 1;
+}
+
+.chart-axis-line {
+  stroke: rgba(203, 213, 225, 0.42);
+  stroke-width: 1;
+}
+
+.chart-tick-label {
+  fill: #647089;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 9px;
+}
+
+.chart-title {
+  margin: 0 0 6px;
+  color: #a5f3fc;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.chart-bar {
+  transition: opacity 120ms ease;
+}
+
+.chart-bar:hover {
+  opacity: 0.85;
+}
+
+.chart-line-path {
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.chart-line-dot {
+  stroke: #071018;
+  stroke-width: 1;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+  color: #aeb9ce;
+  font-size: 10px;
+}
+
+.chart-legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.chart-legend-swatch {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.pie-legend {
+  justify-content: center;
+}
+
+.plot-marker-halo {
+  fill: rgba(253, 224, 71, 0.22);
+  stroke: rgba(253, 224, 71, 0.45);
+}
+
+.plot-marker-point {
+  fill: #fde047;
+  stroke: #071018;
+}
+
+.marker-guide {
+  stroke: rgba(253, 224, 71, 0.42);
+}
+
+.function-readout {
+  position: absolute;
+  z-index: 2;
+  right: 18px;
+  bottom: 17px;
+  max-width: 60%;
+  padding: 8px 10px;
+  display: grid;
+  gap: 4px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 8px;
+  color: #dce8f8;
+  background: rgba(8, 11, 20, 0.78);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.22);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 9px;
+  line-height: 1.35;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+}
+
+.readout-note {
+  color: #d8c77a;
+  font-size: 8px;
+}
+
+.line-graph {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.graph-background {
+  fill: #090c16;
+}
+
+.graph-grid-line {
+  stroke: rgba(148, 163, 184, 0.12);
+  stroke-width: 0.18;
+  vector-effect: non-scaling-stroke;
+}
+
+.graph-axis-line {
+  stroke: rgba(203, 213, 225, 0.42);
+  stroke-width: 0.35;
+  vector-effect: non-scaling-stroke;
+}
+
+.line-path {
+  fill: none;
+  stroke: #67e8f9;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 0.8;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 3px rgba(34, 211, 238, 0.45));
+}
+
+.marker-guide {
+  stroke-dasharray: 1.5 1.5;
+  stroke-width: 0.3;
+  vector-effect: non-scaling-stroke;
+}
+
+.plot-marker-halo {
+  stroke-width: 0.3;
+  vector-effect: non-scaling-stroke;
+}
+
+.plot-marker-point {
+  stroke-width: 0.35;
+  vector-effect: non-scaling-stroke;
+}
+
+.graph-tick-label,
+.graph-axis-title {
+  fill: #647089;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 3px;
+}
+
+.graph-axis-title {
+  fill: #a5f3fc;
+  font-size: 3.5px;
+  font-weight: 700;
+}
+
+.heatmap-canvas {
+  position: absolute;
+  top: 9%;
+  right: 8%;
+  bottom: 9%;
+  left: 9%;
+  width: 83% !important;
+  height: 82% !important;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 5px;
+  image-rendering: auto;
+}
+
+.heatmap-marker {
+  position: absolute;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  border: 2px solid #071018;
+  border-radius: 50%;
+  background: #fde047;
+  box-shadow: 0 0 0 1px rgba(253, 224, 71, 0.8), 0 0 14px rgba(253, 224, 71, 0.5);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+}
+
+.heatmap-axis-label {
+  position: absolute;
+  z-index: 2;
+  padding: 4px 6px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 5px;
+  color: #a5f3fc;
+  background: rgba(8, 11, 20, 0.75);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 9px;
+  font-weight: 700;
+  pointer-events: none;
+}
+
+.heatmap-axis-label-x {
+  right: 8%;
+  bottom: 4.5%;
+}
+
+.heatmap-axis-label-y {
+  top: 9%;
+  left: 3%;
+}
+
+.heatmap-legend {
+  position: absolute;
+  z-index: 2;
+  top: 17px;
+  right: 17px;
+  width: 58px;
+  padding: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 9px;
+  color: #71809a;
+  background: rgba(8, 11, 20, 0.72);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  font-size: 8px;
+  text-align: center;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+}
+
+.heatmap-legend-gradient {
+  height: 112px;
+  margin: 7px 0 5px;
+  border-radius: 3px;
+  background: linear-gradient(to top, #2dd4bf, #3b82f6 34%, #8b5cf6 67%, #f472b6);
+}
+
+.heatmap-legend-values {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.axis-label {
+  min-width: 24px;
+  min-height: 24px;
+  padding: 0 6px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(148, 163, 184, 0.17);
+  border-radius: 6px;
+  color: #f8fafc;
+  background: rgba(8, 11, 20, 0.78);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  max-width: 120px;
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+}
+
+.axis-label-x {
+  color: #fda4af;
+}
+
+.axis-label-y {
+  color: #7dd3fc;
+}
+
+.axis-label-z {
+  color: #fde047;
+}
+
+.z-legend {
+  position: absolute;
+  z-index: 2;
+  top: 17px;
+  right: 17px;
+  width: 44px;
+  padding: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.12);
+  border-radius: 9px;
+  background: rgba(8, 11, 20, 0.66);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  color: #71809a;
+  font-size: 8px;
+  text-align: center;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+}
+
+.legend-gradient {
+  height: 112px;
+  margin: 7px 0 5px;
+  border-radius: 3px;
+  background: linear-gradient(to top, #2dd4bf, #3b82f6 34%, #8b5cf6 67%, #f472b6);
+}
+
+.z-legend > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+}
+
+.clip-notice {
+  position: absolute;
+  z-index: 2;
+  top: 18px;
+  left: 18px;
+  padding: 7px 9px;
+  border: 1px solid rgba(250, 204, 21, 0.18);
+  border-radius: 7px;
+  color: #d7c66b;
+  background: rgba(120, 92, 13, 0.14);
+  font-size: 8px;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
+}
+
+.webgl-fallback {
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #94a3b8;
+  font-size: 13px;
+}
+
+.mathplot-error {
+  padding: 10px 12px;
+  border: 1px solid rgba(251, 113, 133, 0.25);
+  border-radius: 8px;
+  color: #fecdd3;
+  background: rgba(244, 63, 94, 0.08);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 11px;
+  line-height: 1.45;
+}

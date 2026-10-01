@@ -1,0 +1,55 @@
+{
+  "name": "@mathplot/react",
+  "version": "0.1.0",
+  "description": "Interactive React plot components powered by @mathplot/core: 2D functions, heatmaps, 3D surfaces, and bar/line/pie charts.",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./styles.css": "./dist/index.css",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm --sourcemap --clean --external react,react-dom && tsc -p tsconfig.build.json && copyfiles -u 1 \"src/**/*.css\" dist",
+    "test": "vitest run",
+    "typecheck": "tsc -b"
+  },
+  "dependencies": {
+    "@mathplot/core": "0.1.0"
+  },
+  "peerDependencies": {
+    "@react-three/drei": "^10.0.0",
+    "@react-three/fiber": "^9.0.0",
+    "react": "^18.0.0 || ^19.0.0",
+    "react-dom": "^18.0.0 || ^19.0.0",
+    "three": ">=0.160.0"
+  },
+  "devDependencies": {
+    "@react-three/drei": "^10.7.8",
+    "@react-three/fiber": "^9.8.1",
+    "@react-three/test-renderer": "^9.1.1",
+    "@testing-library/jest-dom": "^7.0.1",
+    "@testing-library/react": "^16.3.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@types/three": "^0.186.0",
+    "copyfiles": "^2.4.1",
+    "jsdom": "^30.1.1",
+    "three": "^0.186.1",
+    "tsup": "^8.5.1",
+    "typescript": "~6.0.2",
+    "vitest": "^5.0.1"
+  }
+}
