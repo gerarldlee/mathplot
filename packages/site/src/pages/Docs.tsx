@@ -38,11 +38,11 @@ export default function Docs() {
         </a>
         <nav className="landing-nav" aria-label="Docs">
           <a href="#/">Home</a>
-          <a href="#fence">Fence</a>
-          <a href="#types">Types</a>
-          <a href="#options">Options</a>
-          <a href="#charts">Charts</a>
-          <a href="#api">API</a>
+          <a href="#/docs/fence">Fence</a>
+          <a href="#/docs/types">Types</a>
+          <a href="#/docs/options">Options</a>
+          <a href="#/docs/charts">Charts</a>
+          <a href="#/docs/api">API</a>
         </nav>
       </header>
 
