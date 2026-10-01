@@ -13,13 +13,17 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./styles": {
+      "import": "./dist/web-styles.js",
+      "require": "./dist/web-styles.cjs"
+    },
     "./package.json": "./package.json"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --sourcemap --clean && tsc -p tsconfig.build.json",
+    "build": "tsup src/index.tsx src/web-styles.ts --format esm,cjs --sourcemap --clean && tsc -p tsconfig.build.json",
     "test": "vitest run",
     "typecheck": "tsc -b"
   },

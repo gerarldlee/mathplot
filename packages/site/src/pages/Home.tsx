@@ -152,6 +152,7 @@ export default function Home() {
           <a href="#examples">Examples</a>
           <a href="#packages">Packages</a>
           <a href="#quickstart">Quick start</a>
+          <a href="#/docs">Docs</a>
           <a className="landing-cta" href="#/playground">
             Open playground
           </a>
@@ -278,6 +279,7 @@ registerMathPlotElements()
           <strong>mathplot</strong> — MIT licensed, npm-workspaces monorepo.
         </span>
         <nav aria-label="Footer">
+          <a href="#/docs">Docs</a>
           <a href="#/playground">Playground</a>
           <a href="#examples">Examples</a>
           <a href="#packages">Packages</a>

@@ -1,7 +1,6 @@
 import '@testing-library/jest-dom/vitest'
 import { act, cleanup, render, screen } from '@testing-library/react'
 import { afterEach, describe, expect, it, vi } from 'vitest'
-import type { ReactNode } from 'react'
 import { BufferGeometry, Float32BufferAttribute } from 'three'
 import Surface3DPlot from './Surface3DPlot'
 import { createSurface, type SurfaceSettings } from '@mathplot/core'
@@ -21,7 +20,6 @@ vi.mock('@react-three/fiber', () => ({
 
 vi.mock('@react-three/drei', () => ({
   Grid: () => null,
-  Html: ({ children }: { children?: ReactNode }) => <div>{children}</div>,
   Line: () => null,
   OrbitControls: () => null,
 }))

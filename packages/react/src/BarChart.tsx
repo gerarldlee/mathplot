@@ -14,7 +14,7 @@ export interface BarChartProps {
 }
 
 export function BarChart({ data, title, width = 420, height = 280 }: BarChartProps) {
-  const layout = computeBarLayout(data, { width: 100, height: 100 })
+  const layout = computeBarLayout(data, { width, height })
   const plot = layout.plot
   const seriesCount = data.series.length
 

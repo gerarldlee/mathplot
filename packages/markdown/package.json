@@ -13,13 +13,17 @@
       "import": "./dist/index.js",
       "require": "./dist/index.cjs"
     },
+    "./styles-injection": {
+      "import": "./dist/styles-injection.js",
+      "require": "./dist/styles-injection.cjs"
+    },
     "./package.json": "./package.json"
   },
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "tsup src/index.tsx --format esm,cjs --sourcemap --clean && tsc -p tsconfig.build.json",
+    "build": "tsup src/index.tsx src/styles-injection.ts --format esm,cjs --sourcemap --clean && tsc -p tsconfig.build.json",
     "test": "vitest run",
     "typecheck": "tsc -b"
   },

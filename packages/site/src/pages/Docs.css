@@ -1,0 +1,208 @@
+/* Docs page. Shares the landing palette; every rule is scoped under .docs
+   because Home.css and Docs.css ship in the same bundle. */
+
+.docs {
+  min-height: 100svh;
+  color: #eef2ff;
+  background:
+    radial-gradient(circle at 78% -10%, rgba(56, 189, 248, 0.11), transparent 30rem),
+    radial-gradient(circle at 14% 108%, rgba(139, 92, 246, 0.09), transparent 28rem),
+    #070912;
+}
+
+.docs-topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  height: 72px;
+  padding: 0 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  background: rgba(7, 9, 18, 0.72);
+  backdrop-filter: blur(18px);
+}
+
+.docs-topbar .brand small {
+  display: block;
+  color: #7e8aa5;
+  font-size: 11px;
+}
+
+.docs-main {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 48px 28px 110px;
+}
+
+.docs-main h1 {
+  margin: 12px 0 0;
+  font-size: clamp(30px, 4.5vw, 44px);
+  letter-spacing: -0.03em;
+  color: #f8fafc;
+}
+
+.docs-lede {
+  max-width: 44rem;
+  color: #8f9ab2;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.docs-lede code,
+.docs-main p code,
+.docs-main td code,
+.docs-main h3 code {
+  padding: 1px 6px;
+  border: 1px solid rgba(148, 163, 184, 0.25);
+  border-radius: 6px;
+  background: rgba(148, 163, 184, 0.08);
+  font-size: 13px;
+}
+
+.docs-main h2 {
+  margin: 56px 0 0;
+  padding-top: 44px;
+  border-top: 1px solid rgba(148, 163, 184, 0.12);
+  font-size: clamp(23px, 3vw, 30px);
+  letter-spacing: -0.03em;
+  color: #f8fafc;
+  scroll-margin-top: 92px;
+}
+
+.docs-main h2 + p {
+  max-width: 44rem;
+  margin: 12px 0 0;
+  color: #8f9ab2;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.docs-main h3 {
+  margin: 34px 0 0;
+  color: #67e8f9;
+  font-size: 17px;
+  scroll-margin-top: 92px;
+}
+
+.docs-main h3 + p {
+  margin: 10px 0 0;
+  color: #8f9ab2;
+  font-size: 14.5px;
+  line-height: 1.65;
+}
+
+/* Example cards */
+
+.docs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 22px;
+  margin-top: 28px;
+}
+
+@media (max-width: 420px) {
+  .docs-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.docs-example {
+  margin: 0;
+  display: grid;
+  gap: 12px;
+  padding: 18px;
+  border: 1px solid rgba(148, 163, 184, 0.14);
+  border-radius: 16px;
+  background: rgba(12, 16, 32, 0.6);
+}
+
+.docs-example figcaption {
+  color: #c3cade;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.docs pre.fence-source {
+  margin: 0;
+  padding: 13px 14px;
+  overflow-x: auto;
+  border: 1px solid rgba(148, 163, 184, 0.13);
+  border-radius: 10px;
+  color: #9fd8e8;
+  background: rgba(7, 9, 18, 0.85);
+  font-size: 12.5px;
+  line-height: 1.55;
+}
+
+.docs pre.fence-source code {
+  font-size: inherit;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.docs .fence-result {
+  min-width: 0;
+}
+
+.docs .fence-result .mathplot-container {
+  aspect-ratio: auto;
+}
+
+/* Reference tables */
+
+.docs-table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.docs-table th,
+.docs-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+  text-align: left;
+  vertical-align: top;
+  color: #c3cade;
+  line-height: 1.55;
+}
+
+.docs-table th {
+  color: #8f9ab2;
+  font-size: 12.5px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.docs-table td:first-child {
+  color: #f8fafc;
+  font-weight: 600;
+}
+
+@media (max-width: 640px) {
+  .docs-table {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .docs-topbar {
+    padding: 0 20px;
+  }
+
+  .docs-main {
+    padding: 36px 20px 80px;
+  }
+
+  .docs-main h2 {
+    margin-top: 44px;
+    padding-top: 34px;
+  }
+}

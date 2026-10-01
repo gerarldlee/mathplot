@@ -5,6 +5,27 @@
   container-type: inline-size;
 }
 
+/* Self-contained plot shell: standalone usage (landing page, markdown mounts,
+   custom elements) gets a sized box exactly like the original PlotEq .plot-area. */
+.mathplot-canvas-shell {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-radius: 12px;
+  background:
+    radial-gradient(circle at 50% 48%, rgba(49, 70, 110, 0.13), transparent 45%),
+    #090c16;
+}
+
+.mathplot-canvas-shell > canvas,
+.mathplot-canvas-shell canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  touch-action: none;
+}
+
 .two-dimensional-viewport {
   position: relative;
   width: 100%;
@@ -292,39 +313,6 @@
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
 }
 
-.axis-label {
-  min-width: 24px;
-  min-height: 24px;
-  padding: 0 6px;
-  display: grid;
-  place-items: center;
-  border: 1px solid rgba(148, 163, 184, 0.17);
-  border-radius: 6px;
-  color: #f8fafc;
-  background: rgba(8, 11, 20, 0.78);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
-  font-size: 11px;
-  max-width: 120px;
-  font-weight: 800;
-  line-height: 1.2;
-  text-align: center;
-  pointer-events: none;
-  backdrop-filter: blur(8px);
-}
-
-.axis-label-x {
-  color: #fda4af;
-}
-
-.axis-label-y {
-  color: #7dd3fc;
-}
-
-.axis-label-z {
-  color: #fde047;
-}
-
 .z-legend {
   position: absolute;
   z-index: 2;
@@ -389,4 +377,24 @@
   font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   font-size: 11px;
   line-height: 1.45;
+}
+
+.mathplot-function-label {
+  position: absolute;
+  z-index: 2;
+  left: 17px;
+  top: 15px;
+  max-width: calc(100% - 34px);
+  overflow: hidden;
+  padding: 6px 10px;
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  border-radius: 8px;
+  color: #9fd8e8;
+  background: rgba(8, 11, 20, 0.7);
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", monospace;
+  font-size: 10px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  pointer-events: none;
+  backdrop-filter: blur(8px);
 }

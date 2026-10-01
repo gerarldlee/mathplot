@@ -53,6 +53,13 @@ describe('MathPlot', () => {
 
     expect(screen.getByLabelText('Interactive two-dimensional line graph')).toBeInTheDocument()
   })
+
+  it('renders a 3d fence without marker or surface props', () => {
+    render(<MathPlot code={'3d\nz = sin(x) * cos(y)\nx: -6..6\ny: -6..6'} />)
+
+    expect(screen.getByLabelText('z color legend')).toBeInTheDocument()
+    expect(screen.getByText('z = sin(x) * cos(y)')).toBeInTheDocument()
+  })
 })
 
 describe('MathPlotCodeFence', () => {

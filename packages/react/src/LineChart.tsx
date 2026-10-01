@@ -71,7 +71,11 @@ export function LineChart({ data, title, width = 420, height = 280 }: LineChartP
                   r={2.5}
                   fill={series.color}
                 >
-                  <title>{`${series.name}: ${data.series[seriesIndex]?.values[data.labels.indexOf(data.labels[segmentIndex + segmentIndex])] ?? ''}`}</title>
+                  <title>
+                    {`${data.labels[point.labelIndex]} · ${series.name}: ${
+                      data.series[seriesIndex]?.values[point.labelIndex] ?? ''
+                    }`}
+                  </title>
                 </circle>
               )),
             )}

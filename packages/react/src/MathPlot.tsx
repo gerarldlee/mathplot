@@ -43,7 +43,9 @@ function FunctionPlot({ spec }: { spec: FunctionPlotSpec }) {
     )
   }
 
-  return <Surface3DPlot equation={spec.equation} settings={settings} animation={animation} />
+  if (spec.type === '3d') {
+    return <Surface3DPlot equation={spec.equation} settings={settings} animation={animation} showEquation />
+  }
 }
 
 function ChartPlot({ spec }: { spec: ChartPlotSpec }) {

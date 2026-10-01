@@ -1,7 +1,7 @@
-import { Grid, Html, Line, OrbitControls } from '@react-three/drei'
+import { Grid, Line, OrbitControls } from '@react-three/drei'
 import { Canvas, useFrame, useThree } from '@react-three/fiber'
 import { useEffect, useMemo, useRef, useState, type ComponentRef } from 'react'
-import { ACESFilmicToneMapping, DoubleSide, type Mesh } from 'three'
+import { ACESFilmicToneMapping, CanvasTexture, DoubleSide, SRGBColorSpace, type Mesh } from 'three'
 import {
   createSurfacePointSampler,
   createSurfaceSampler,
@@ -26,6 +26,8 @@ export interface Surface3DPlotProps {
   }
   animationResetKey?: number
   resetKey?: number
+  /** Shows a small equation label on the plot when set (default false). */
+  showEquation?: boolean
   onAnimationError?: (message: string) => void
 }
 
@@ -83,6 +85,58 @@ function getGridStep(span: number) {
   if (normalized > 5) return 10 * magnitude
   if (normalized > 2) return 5 * magnitude
   return 2 * magnitude
+}
+
+const AXIS_LABEL_COLORS = {
+  x: '#fda4af',
+  y: '#7dd3fc',
+  z: '#fde047',
+} as const
+
+/**
+ * Billboard sprite rendering an axis label — replaces drei's <Html>, whose
+ * DOM portal root gets orphaned during React 19 unmounts and crashes route
+ * transitions with NotFoundError removeChild.
+ */
+function AxisLabelSprite({ text, color, position }: { text: string; color: string; position: [number, number, number] }) {
+  const texture = useMemo(() => {
+    const canvas = document.createElement('canvas')
+    const context = canvas.getContext('2d')!
+    const label = text
+    const fontSize = 64
+    context.font = `700 ${fontSize}px SFMono-Regular, Consolas, monospace`
+    const metrics = context.measureText(label)
+    const padX = 40
+    const padY = 30
+    canvas.width = Math.ceil(metrics.width + padX * 2)
+    canvas.height = fontSize + padY * 2
+    context.font = `700 ${fontSize}px SFMono-Regular, Consolas, monospace`
+    context.fillStyle = 'rgba(8, 11, 20, 0.78)'
+    context.fillRect(0, 6, canvas.width - 1, canvas.height - 12)
+    context.strokeStyle = 'rgba(148, 163, 184, 0.17)'
+    context.lineWidth = 3
+    context.strokeRect(1.5, 7.5, canvas.width - 3, canvas.height - 15)
+    context.fillStyle = color
+    context.textAlign = 'center'
+    context.textBaseline = 'middle'
+    context.fillText(label, canvas.width / 2, canvas.height / 2 + 3)
+    const tex = new CanvasTexture(canvas)
+    tex.colorSpace = SRGBColorSpace
+    return tex
+  }, [text, color])
+
+  useEffect(() => () => texture.dispose(), [texture])
+  const image = texture.image as HTMLCanvasElement
+  const aspect = image.width / image.height || 1
+  // sizeAttenuation=false keeps labels a constant screen size; 0.105 is
+  // ~14% of the visible height for the default 42° camera.
+  const height = 0.105
+
+  return (
+    <sprite position={position} scale={[height * aspect, height, 1]}>
+      <spriteMaterial map={texture} transparent depthTest={false} sizeAttenuation={false} toneMapped={false} />
+    </sprite>
+  )
 }
 
 function CameraController({ bounds, resetKey }: { bounds: ViewBounds; resetKey: number }) {
@@ -171,27 +225,21 @@ function CoordinateAxes({
         <coneGeometry args={[arrowSize, arrowSize * 2.4, 12]} />
         <meshBasicMaterial color="#facc15" />
       </mesh>
-      <Html
-        center
+      <AxisLabelSprite
+        text={axisLabels.x}
+        color={AXIS_LABEL_COLORS.x}
         position={[bounds.distance + labelPadding, 0, 0]}
-        className="axis-label axis-label-x"
-      >
-        {axisLabels.x}
-      </Html>
-      <Html
-        center
+      />
+      <AxisLabelSprite
+        text={axisLabels.y}
+        color={AXIS_LABEL_COLORS.y}
         position={[0, 0, bounds.distance + labelPadding]}
-        className="axis-label axis-label-y"
-      >
-        {axisLabels.y}
-      </Html>
-      <Html
-        center
+      />
+      <AxisLabelSprite
+        text={axisLabels.z}
+        color={AXIS_LABEL_COLORS.z}
         position={[0, bounds.zMax + labelPadding, 0]}
-        className="axis-label axis-label-z"
-      >
-        {axisLabels.z}
-      </Html>
+      />
     </group>
   )
 }
@@ -353,6 +401,8 @@ function SurfacePlotRuntime(props: Surface3DPlotProps) {
   const sample = useMemo(() => createSurfaceSampler(props.equation), [props.equation])
   const errorHandlerRef = useRef(props.onAnimationError)
   const surface = props.animation?.playing ? animatedSurface : props.initialSurface!
+  const marker = props.marker ?? { x: 0, y: 0 }
+  const showEquation = props.showEquation ?? false
 
   useEffect(() => {
     errorHandlerRef.current = props.onAnimationError
@@ -415,7 +465,7 @@ function SurfacePlotRuntime(props: Surface3DPlotProps) {
   )
 
   return (
-    <>
+    <div className="mathplot-canvas-shell">
       <Canvas
         aria-label="Interactive three-dimensional surface graph"
         role="img"
@@ -437,7 +487,7 @@ function SurfacePlotRuntime(props: Surface3DPlotProps) {
           surface={surface}
           initialSurface={props.initialSurface!}
           settings={props.settings}
-          marker={props.marker!}
+          marker={marker}
           equation={props.equation}
           axisLabels={props.axisLabels ?? { x: 'x', y: 'y', z: 'z' }}
           animation={props.animation}
@@ -445,6 +495,11 @@ function SurfacePlotRuntime(props: Surface3DPlotProps) {
           resetKey={props.resetKey ?? 0}
         />
       </Canvas>
+      {showEquation && (
+        <div className="mathplot-function-label" aria-hidden="true">
+          z = {props.equation}
+        </div>
+      )}
       <div
         className="z-legend"
         aria-label={`${props.axisLabels?.z ?? 'z'} color legend`}
@@ -459,7 +514,7 @@ function SurfacePlotRuntime(props: Surface3DPlotProps) {
       {surface.clipped && (
         <div className="clip-notice">Tall values clipped for a clearer view</div>
       )}
-    </>
+    </div>
   )
 }
 

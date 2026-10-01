@@ -267,6 +267,8 @@ export interface LineLayoutOptions {
 export interface LineSeriesPoint {
   x: number
   y: number
+  /** Index into ChartData.labels for the category this point belongs to. */
+  labelIndex: number
 }
 
 export interface LineLayoutSeries {
@@ -338,7 +340,7 @@ export function computeLineLayout(
         return
       }
 
-      current.push({ x: toX(labelIndex), y: toY(value) })
+      current.push({ x: toX(labelIndex), y: toY(value), labelIndex })
     })
 
     if (current.length > 0) {
