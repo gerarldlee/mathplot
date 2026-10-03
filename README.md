@@ -6,6 +6,7 @@
 [![npm](https://img.shields.io/npm/v/@mathplot/remark.svg)](https://www.npmjs.com/package/@mathplot/remark)
 [![npm](https://img.shields.io/npm/v/@mathplot/web.svg)](https://www.npmjs.com/package/@mathplot/web)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/gerarldlee/mathplot/actions/workflows/ci.yml/badge.svg)](https://github.com/gerarldlee/mathplot/actions/workflows/ci.yml)
 
 Live, interactive math plots from a markdown fence. Write a ```mathplot code block and get a
 plot — a 2D function line, a heatmap, a 3D surface, or a bar/line/pie chart — rendered by the
