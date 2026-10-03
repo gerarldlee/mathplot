@@ -43,6 +43,13 @@ export default function Docs() {
           <a href="#/docs/options">Options</a>
           <a href="#/docs/charts">Charts</a>
           <a href="#/docs/api">API</a>
+          <a
+            href="https://github.com/gerarldlee/mathplot"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
         </nav>
       </header>
 
