@@ -153,6 +153,13 @@ export default function Home() {
           <a href="#packages">Packages</a>
           <a href="#quickstart">Quick start</a>
           <a href="#/docs">Docs</a>
+          <a
+            href="https://github.com/gerarldlee/mathplot"
+            target="_blank"
+            rel="noreferrer"
+          >
+            GitHub
+          </a>
           <a className="landing-cta" href="#/playground">
             Open playground
           </a>
