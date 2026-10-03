@@ -101,14 +101,14 @@ const packages = [
       'Drop-in mountAll(root) that replaces every ```mathplot fence in rendered markdown HTML with a live plot.',
   },
   {
-    name: '@mathplot/remark-mathplot',
-    install: 'npm i @mathplot/remark-mathplot',
+    name: '@mathplot/remark',
+    install: 'npm i @mathplot/remark',
     description:
       'remark plugin that turns ```mathplot fences into <MathPlot> JSX nodes for mdx and unified pipelines.',
   },
   {
-    name: '@mathplot/web-components',
-    install: 'npm i @mathplot/web-components',
+    name: '@mathplot/web',
+    install: 'npm i @mathplot/web',
     description:
       'Framework-agnostic <mathplot-plot> and friends with shadow-DOM rendering and a raw-text fallback.',
   },
@@ -248,7 +248,7 @@ mountAll(document.body)`}</code>
             <div className="quickstart-step">
               <h3>Web components</h3>
               <pre className="fence-source">
-                <code>{`import { registerMathPlotElements } from '@mathplot/web-components'
+                <code>{`import { registerMathPlotElements } from '@mathplot/web'
 
 registerMathPlotElements()
 

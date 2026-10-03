@@ -27,8 +27,8 @@ packages/
   core/              @mathplot/core — engine (parsing, sampling, CSV)
   react/             @mathplot/react — React components
   markdown/          @mathplot/markdown — mountAll for rendered HTML
-  remark-mathplot/   @mathplot/remark-mathplot — remark plugin
-  web-components/    @mathplot/web-components — custom elements
+  remark/            @mathplot/remark — remark plugin
+  web/               @mathplot/web — custom elements
   site/              @mathplot/site (private) — docs site + playground
 ```
 
@@ -39,8 +39,8 @@ All packages share `@mathplot/core` and its `MathPlotSpec`. A fence written for 
 1. Add the type alias and parser logic in `packages/core/src/`
 2. Add a sampler in `packages/core/src/samplers/`
 3. Add a React component in `packages/react/src/`
-4. Update the remark plugin in `packages/remark-mathplot/src/`
-5. Update web components in `packages/web-components/src/`
+4. Update the remark plugin in `packages/remark/src/`
+5. Update web components in `packages/web/src/`
 6. Add tests in each package's `*.test.ts` files
 7. Update the root README and the site's Docs page
 

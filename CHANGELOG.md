@@ -13,7 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `@mathplot/core` — equation parsing, samplers, chart CSV parsing, fence parser
 - `@mathplot/react` — React components for all plot types + `MathPlotCodeFence`
 - `@mathplot/markdown` — `mountAll(root)` for mounting plots on rendered HTML
-- `@mathplot/remark-mathplot` — remark plugin for mdx/unified pipelines
-- `@mathplot/web-components` — custom elements with shadow DOM
+- `@mathplot/remark` — remark plugin for mdx/unified pipelines
+- `@mathplot/web` — custom elements with shadow DOM
 - Interactive playground at `#/playground`
 - Full documentation site at `#/docs`

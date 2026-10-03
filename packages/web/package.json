@@ -1,5 +1,5 @@
 {
-  "name": "@mathplot/web-components",
+  "name": "@mathplot/web",
   "version": "0.1.0",
   "description": "Custom elements for mathplot: <mathplot-plot>, <mathplot-2d>, <mathplot-3d>, <mathplot-heatmap>, <mathplot-bar>, <mathplot-line>, <mathplot-pie> for non-React sites.",
   "license": "MIT",
@@ -26,7 +26,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gerarldlee/mathplot.git",
-    "directory": "packages/web-components"
+    "directory": "packages/web"
   },
   "homepage": "https://gerarldlee.github.io/mathplot/",
   "bugs": {

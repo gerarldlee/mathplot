@@ -1,5 +1,5 @@
 {
-  "name": "@mathplot/remark-mathplot",
+  "name": "@mathplot/remark",
   "version": "0.1.0",
   "description": "Remark plugin that turns ```mathplot code fences into <MathPlot> components for MDX and react-markdown.",
   "license": "MIT",
@@ -23,7 +23,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gerarldlee/mathplot.git",
-    "directory": "packages/remark-mathplot"
+    "directory": "packages/remark"
   },
   "homepage": "https://gerarldlee.github.io/mathplot/",
   "bugs": {

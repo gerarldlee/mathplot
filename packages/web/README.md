@@ -1,11 +1,11 @@
-# @mathplot/web-components
+# @mathplot/web
 
 Framework-agnostic custom elements for [mathplot](https://github.com/gerarldlee/mathplot):
 render live plots anywhere HTML works — plain pages, WordPress, docs sites, or frameworks
 that ignore custom elements.
 
 ```bash
-npm i @mathplot/web-components
+npm i @mathplot/web
 ```
 
 Peer deps: `react`, `react-dom` ^18 || ^19 (used internally for rendering).
@@ -13,8 +13,8 @@ Peer deps: `react`, `react-dom` ^18 || ^19 (used internally for rendering).
 ## Usage
 
 ```js
-import { registerMathPlotElements } from '@mathplot/web-components'
-import '@mathplot/web-components/styles'
+import { registerMathPlotElements } from '@mathplot/web'
+import '@mathplot/web/styles'
 
 registerMathPlotElements() // idempotent
 ```

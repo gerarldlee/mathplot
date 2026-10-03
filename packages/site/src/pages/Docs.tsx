@@ -243,7 +243,7 @@ const result = mountAll(document.body)
 
         <h3>remark / mdx</h3>
         <pre className="fence-source">
-          <code>{`import remarkMathPlot from '@mathplot/remark-mathplot'
+          <code>{`import remarkMathPlot from '@mathplot/remark'
 
 // in your unified pipeline: .use(remarkMathPlot)
 // mathplot fences become <MathPlot code={…} infoString={…} /> JSX`}</code>
@@ -251,8 +251,8 @@ const result = mountAll(document.body)
 
         <h3>Custom elements</h3>
         <pre className="fence-source">
-          <code>{`import { registerMathPlotElements } from '@mathplot/web-components'
-import '@mathplot/web-components/styles'`}</code>
+          <code>{`import { registerMathPlotElements } from '@mathplot/web'
+import '@mathplot/web/styles'`}</code>
         </pre>
         <pre className="fence-source">
           <code>{`<mathplot-plot>2d y=sin(x) x=-6..6</mathplot-plot>

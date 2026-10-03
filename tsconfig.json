@@ -4,8 +4,8 @@
     { "path": "./packages/core" },
     { "path": "./packages/react" },
     { "path": "./packages/markdown" },
-    { "path": "./packages/remark-mathplot" },
-    { "path": "./packages/web-components" },
+    { "path": "./packages/remark" },
+    { "path": "./packages/web" },
     { "path": "./packages/site" }
   ]
 }

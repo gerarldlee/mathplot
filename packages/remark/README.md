@@ -1,11 +1,11 @@
-# @mathplot/remark-mathplot
+# @mathplot/remark
 
 remark plugin for [mathplot](https://github.com/gerarldlee/mathplot): turns ```mathplot code
 fences into `<MathPlot>` JSX flow elements, so mdx (or any unified pipeline) renders live
 plots.
 
 ```bash
-npm i @mathplot/remark-mathplot
+npm i @mathplot/remark
 ```
 
 Peer deps: `react`, `react-dom` ^18 || ^19 (for the JSX element the plugin emits when
@@ -14,7 +14,7 @@ combined with mdx). Depends on `unist-util-visit`.
 ## Usage with mdx
 
 ```js
-import remarkMathPlot from '@mathplot/remark-mathplot'
+import remarkMathPlot from '@mathplot/remark'
 
 const processor = unified().use(remarkPlugins, [remarkMathPlot]) // e.g. in @mdx-js/rollup
 

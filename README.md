@@ -3,8 +3,8 @@
 [![npm](https://img.shields.io/npm/v/@mathplot/core.svg)](https://www.npmjs.com/package/@mathplot/core)
 [![npm](https://img.shields.io/npm/v/@mathplot/react.svg)](https://www.npmjs.com/package/@mathplot/react)
 [![npm](https://img.shields.io/npm/v/@mathplot/markdown.svg)](https://www.npmjs.com/package/@mathplot/markdown)
-[![npm](https://img.shields.io/npm/v/@mathplot/remark-mathplot.svg)](https://www.npmjs.com/package/@mathplot/remark-mathplot)
-[![npm](https://img.shields.io/npm/v/@mathplot/web-components.svg)](https://www.npmjs.com/package/@mathplot/web-components)
+[![npm](https://img.shields.io/npm/v/@mathplot/remark.svg)](https://www.npmjs.com/package/@mathplot/remark)
+[![npm](https://img.shields.io/npm/v/@mathplot/web.svg)](https://www.npmjs.com/package/@mathplot/web)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Live, interactive math plots from a markdown fence. Write a ```mathplot code block and get a
@@ -28,8 +28,8 @@ The repo is an npm-workspaces monorepo:
 | [`packages/core`](packages/core) | `@mathplot/core` | Equation evaluation (mathjs), samplers, chart CSV parsing, fence parser |
 | [`packages/react`](packages/react) | `@mathplot/react` | React components for every plot type + `MathPlotCodeFence` for react-markdown |
 | [`packages/markdown`](packages/markdown) | `@mathplot/markdown` | `mountAll(root)` — mount live plots onto rendered mathplot fences in any HTML |
-| [`packages/remark-mathplot`](packages/remark-mathplot) | `@mathplot/remark-mathplot` | remark plugin → `<MathPlot>` JSX for mdx/unified pipelines |
-| [`packages/web-components`](packages/web-components) | `@mathplot/web-components` | `mathplot-plot` custom elements with shadow DOM |
+| [`packages/remark`](packages/remark) | `@mathplot/remark` | remark plugin → `<MathPlot>` JSX for mdx/unified pipelines |
+| [`packages/web`](packages/web) | `@mathplot/web` | `mathplot-plot` custom elements with shadow DOM |
 | [`packages/site`](packages/site) | `@mathplot/site` (private) | Landing page + PlotEq playground (this repo's docs site) |
 
 ## Packages
@@ -57,9 +57,9 @@ import { MathPlot } from '@mathplot/react'
 Every integration path returns/renders the same `MathPlotSpec` from `@mathplot/core`:
 
 - `@mathplot/markdown` — `mountAll(document.body)` after your markdown renders to HTML.
-- `@mathplot/remark-mathplot` — add the plugin to your remark pipeline; mathplot code nodes
+- `@mathplot/remark` — add the plugin to your remark pipeline; mathplot code nodes
   become `<MathPlot>` JSX elements (mdx v2+).
-- `@mathplot/web-components` — `registerMathPlotElements()` then use
+- `@mathplot/web` — `registerMathPlotElements()` then use
   `<mathplot-plot>2d
 y = sin(x)
 x: -6..6</mathplot-plot>` anywhere.
