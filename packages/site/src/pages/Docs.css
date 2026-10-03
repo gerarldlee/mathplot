@@ -37,6 +37,10 @@
   padding: 48px 28px 110px;
 }
 
+.docs .landing-footer {
+  margin-top: 0;
+}
+
 .docs-main h1 {
   margin: 12px 0 0;
   font-size: clamp(30px, 4.5vw, 44px);

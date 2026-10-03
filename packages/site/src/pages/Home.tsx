@@ -283,7 +283,10 @@ registerMathPlotElements()
 
       <footer className="landing-footer">
         <span>
-          <strong>mathplot</strong> — MIT licensed, npm-workspaces monorepo.
+          © 2026.{' '}
+          <a href="https://fociilabs.com" target="_blank" rel="noreferrer">
+            fociilabs.com
+          </a>
         </span>
         <nav aria-label="Footer">
           <a href="#/docs">Docs</a>

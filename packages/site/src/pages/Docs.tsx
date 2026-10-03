@@ -279,6 +279,22 @@ const spec = parseMathPlotFence('2d y=sin(x) x=-6..6')
 const data = createLine('sin(x)', { x: { min: -6, max: 6 }, y: { min: -6, max: 6 }, resolution: 64 })`}</code>
         </pre>
       </main>
+
+      <footer className="landing-footer">
+        <span>
+          © 2026.{' '}
+          <a href="https://fociilabs.com" target="_blank" rel="noreferrer">
+            fociilabs.com
+          </a>
+        </span>
+        <nav aria-label="Footer">
+          <a href="#/">Home</a>
+          <a href="#/playground">Playground</a>
+          <a href="https://github.com/gerarldlee/mathplot" target="_blank" rel="noreferrer">
+            GitHub
+          </a>
+        </nav>
+      </footer>
     </div>
   )
 }

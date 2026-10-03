@@ -296,32 +296,3 @@
   max-height: 340px;
   overflow: auto;
 }
-
-/* Footer */
-
-.landing-footer {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  margin-top: 80px;
-  padding: 26px 28px;
-  border-top: 1px solid rgba(148, 163, 184, 0.12);
-  color: #7e8aa5;
-  font-size: 13px;
-}
-
-.landing-footer nav {
-  display: flex;
-  gap: 18px;
-}
-
-.landing-footer a {
-  color: #aeb9ce;
-  text-decoration: none;
-}
-
-.landing-footer a:hover {
-  color: #eef2ff;
-}
