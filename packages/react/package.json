@@ -16,15 +16,29 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE"
   ],
   "sideEffects": [
     "**/*.css"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerarldlee/mathplot.git",
+    "directory": "packages/react"
+  },
+  "homepage": "https://gerarldlee.github.io/mathplot/",
+  "bugs": {
+    "url": "https://github.com/gerarldlee/mathplot/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm --sourcemap --clean --external react,react-dom && tsc -p tsconfig.build.json && copyfiles -u 1 \"src/**/*.css\" dist",
     "test": "vitest run",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "prepack": "npm run build"
   },
   "dependencies": {
     "@mathplot/core": "0.1.0"

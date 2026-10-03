@@ -1,6 +1,6 @@
 # @mathplot/web-components
 
-Framework-agnostic custom elements for [mathplot](https://github.com/gerard/mathplot):
+Framework-agnostic custom elements for [mathplot](https://github.com/gerarldlee/mathplot):
 render live plots anywhere HTML works — plain pages, WordPress, docs sites, or frameworks
 that ignore custom elements.
 

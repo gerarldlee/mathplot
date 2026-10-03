@@ -1,8 +1,17 @@
 # mathplot
 
+[![npm](https://img.shields.io/npm/v/@mathplot/core.svg)](https://www.npmjs.com/package/@mathplot/core)
+[![npm](https://img.shields.io/npm/v/@mathplot/react.svg)](https://www.npmjs.com/package/@mathplot/react)
+[![npm](https://img.shields.io/npm/v/@mathplot/markdown.svg)](https://www.npmjs.com/package/@mathplot/markdown)
+[![npm](https://img.shields.io/npm/v/@mathplot/remark-mathplot.svg)](https://www.npmjs.com/package/@mathplot/remark-mathplot)
+[![npm](https://img.shields.io/npm/v/@mathplot/web-components.svg)](https://www.npmjs.com/package/@mathplot/web-components)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 Live, interactive math plots from a markdown fence. Write a ```mathplot code block and get a
 plot — a 2D function line, a heatmap, a 3D surface, or a bar/line/pie chart — rendered by the
 integration layer of your choice.
+
+**Docs & playground:** [https://gerarldlee.github.io/mathplot/](https://gerarldlee.github.io/mathplot/)
 
 ````markdown
 ```mathplot

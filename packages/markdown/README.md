@@ -1,6 +1,6 @@
 # @mathplot/markdown
 
-Mount live [mathplot](https://github.com/gerard/mathplot) plots onto ```mathplot code fences
+Mount live [mathplot](https://github.com/gerarldlee/mathplot) plots onto ```mathplot code fences
 in already-rendered markdown HTML. Works with any markdown renderer, static-site generator,
 docs site, or CMS output — no pipeline changes needed.
 

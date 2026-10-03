@@ -1,6 +1,6 @@
 # @mathplot/react
 
-React components for [mathplot](https://github.com/gerard/mathplot): interactive 2D function
+React components for [mathplot](https://github.com/gerarldlee/mathplot): interactive 2D function
 plots, heatmaps, 3D surfaces, and bar/line/pie charts — plus a react-markdown fence
 component.
 

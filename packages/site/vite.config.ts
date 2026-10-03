@@ -3,6 +3,7 @@ import { defineConfig } from 'vitest/config'
 
 export default defineConfig({
   plugins: [react()],
+  base: '/mathplot/',
   test: {
     environment: 'jsdom',
     css: true,

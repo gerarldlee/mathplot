@@ -1,6 +1,6 @@
 # @mathplot/core
 
-The engine of [mathplot](https://github.com/gerard/mathplot): parse a ```mathplot fence into
+The engine of [mathplot](https://github.com/gerarldlee/mathplot): parse a ```mathplot fence into
 a `MathPlotSpec`, evaluate equations with mathjs, sample functions, and parse chart CSV.
 
 - `parseMathPlotFence(body, infoString?)` — turn fence contents into a `MathPlotSpec`

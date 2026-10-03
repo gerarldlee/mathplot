@@ -16,13 +16,27 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE"
   ],
   "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerarldlee/mathplot.git",
+    "directory": "packages/remark-mathplot"
+  },
+  "homepage": "https://gerarldlee.github.io/mathplot/",
+  "bugs": {
+    "url": "https://github.com/gerarldlee/mathplot/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --sourcemap --clean && tsc -p tsconfig.build.json",
     "test": "vitest run",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "prepack": "npm run build"
   },
   "dependencies": {
     "unist-util-visit": "^5.0.0"

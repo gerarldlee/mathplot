@@ -20,12 +20,26 @@
     "./package.json": "./package.json"
   },
   "files": [
-    "dist"
+    "dist",
+    "LICENSE"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gerarldlee/mathplot.git",
+    "directory": "packages/markdown"
+  },
+  "homepage": "https://gerarldlee.github.io/mathplot/",
+  "bugs": {
+    "url": "https://github.com/gerarldlee/mathplot/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "tsup src/index.tsx src/styles-injection.ts --format esm,cjs --sourcemap --clean && tsc -p tsconfig.build.json",
     "test": "vitest run",
-    "typecheck": "tsc -b"
+    "typecheck": "tsc -b",
+    "prepack": "npm run build"
   },
   "dependencies": {
     "@mathplot/core": "0.1.0",

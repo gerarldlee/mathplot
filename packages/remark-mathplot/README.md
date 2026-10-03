@@ -1,6 +1,6 @@
 # @mathplot/remark-mathplot
 
-remark plugin for [mathplot](https://github.com/gerard/mathplot): turns ```mathplot code
+remark plugin for [mathplot](https://github.com/gerarldlee/mathplot): turns ```mathplot code
 fences into `<MathPlot>` JSX flow elements, so mdx (or any unified pipeline) renders live
 plots.
 
